@@ -9,7 +9,8 @@ RUN apk add --no-cache --update ca-certificates openssl tar &&\
                                           etcd-v${_ETCD_VERSION}-linux-amd64/etcdctl && \
     apk del --purge tar
 
-VOLUME      /data
-EXPOSE      2379 2380 4001 7001
-#ADD         run.sh /bin/run.sh
-ENTRYPOINT  ["/bin/etcd", "-data-dir=/data"]
+VOLUME      /var/lib/etcd
+
+EXPOSE      2379 2380
+
+ENTRYPOINT  ["/bin/etcd", "-data-dir=/var/lib/etcd"]
