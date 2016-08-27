@@ -1,7 +1,7 @@
 FROM alpine:3.4
 
 # see https://github.com/coreos/etcd/issues/4234
-ENV _ETCD_VERSION=3.0.2
+ENV _ETCD_VERSION=3.0.6
 
 RUN apk add --no-cache --update \
     ca-certificates \
